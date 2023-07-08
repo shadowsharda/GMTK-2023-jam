@@ -10,14 +10,14 @@ func _ready():
 	
 
 func _physics_process(delta):
-	movement()
+	movement(delta)
 	use_skill()
 	
-func movement():
+func movement(delta_time:float):
 	var direction = Input.get_vector("Move_Left", "Move_Right", "Move_Up", "Move_Down")
 
 	if direction:
-		velocity = (direction * speed) 
+		velocity = (direction * speed*delta_time) 
 	else:
 		velocity = Vector2.ZERO
 
