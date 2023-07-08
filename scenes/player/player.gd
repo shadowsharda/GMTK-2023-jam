@@ -2,12 +2,12 @@ extends CharacterBody2D
 
 class_name Player
 
-@export var speed = 300.0
-@onready var skill_manager = $skills_manager
+@export var speed:float = 300.0
+@onready var skill_manager:Node2D = $skills_manager
 
 func _ready():
 	skill_manager.load_skills()
-	pass
+	
 
 func _physics_process(delta):
 	movement()
