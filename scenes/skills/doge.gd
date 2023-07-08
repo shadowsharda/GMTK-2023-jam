@@ -9,7 +9,7 @@ var can_doge = true
 
 func _ready():
 	doge_effect_timer
-	pass
+	
 
 func activate_skill():
 	doge()
