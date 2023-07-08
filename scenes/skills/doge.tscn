@@ -1,0 +1,14 @@
+[gd_scene load_steps=2 format=3 uid="uid://daatilf864lgd"]
+
+[ext_resource type="Script" path="res://scenes/skills/doge.gd" id="1_0wwhr"]
+
+[node name="doge" type="Node2D"]
+script = ExtResource("1_0wwhr")
+
+[node name="doge_timer" type="Timer" parent="."]
+one_shot = true
+
+[node name="doge_time" type="Timer" parent="."]
+one_shot = true
+
+[connection signal="timeout" from="doge_time" to="." method="_on_doge_time_timeout"]
