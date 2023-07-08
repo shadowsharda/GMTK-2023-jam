@@ -8,7 +8,12 @@ var can_doge = true
 @onready var doge_effect_timer = $doge_time
 
 func _ready():
-	pass
+<<<<<<< HEAD
+	
+=======
+	doge_effect_timer
+	
+>>>>>>> 9d6e93035501daa48952deb896663bc0ad1cd314
 
 func activate_skill():
 	doge()

@@ -11,15 +11,14 @@ size = Vector2(40, 40)
 radius = 19.105
 
 [node name="player" type="CharacterBody2D"]
+position = Vector2(547, 162)
 script = ExtResource("1_kslpw")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(0.5, -20)
 scale = Vector2(0.304688, 0.3125)
 texture = ExtResource("2_qp67u")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, -20)
 shape = SubResource("RectangleShape2D_32y7h")
 
 [node name="hitbox" type="Area2D" parent="."]
@@ -31,5 +30,8 @@ shape = SubResource("CircleShape2D_mnwl8")
 [node name="skills_manager" type="Node2D" parent="."]
 script = ExtResource("3_ccahg")
 skill_list = Array[String](["doge", "launch_projectile"])
+
+[node name="bullet_spawerMarker2D" type="Marker2D" parent="."]
+position = Vector2(2, -19)
 
 [connection signal="area_entered" from="hitbox" to="." method="_on_hitbox_area_entered"]

@@ -2,16 +2,20 @@ extends CharacterBody2D
 
 class_name Player
 
-@export var speed = 300.0
-@onready var skill_manager = $skills_manager
+@export var speed:float = 3000.0
+@export var rotation_speed:float=PI/2
+@onready var skill_manager:Node2D = $skills_manager
 
+var direction:Vector2=Vector2(0,0)
+var  rotation_direction:int=0
 func _ready():
 	skill_manager.load_skills()
-	pass
+	
 
 func _physics_process(delta):
-	movement()
+	movement(delta)
 	use_skill()
+<<<<<<< HEAD
 	pass
 
 func movement():
@@ -19,8 +23,33 @@ func movement():
 
 	if direction:
 		velocity = (direction * speed) 
+=======
+	
+func movement(delta_time:float):
+	#var direction:Vector2 = Input.get_vector("Move_Left", "Move_Right", "Move_Up", "Move_Down")
+	#direction=Vector2(0,0)
+	if Input.is_action_just_pressed("Move_Up"):
+		direction=Vector2(0,-1)
+>>>>>>> 9d6e93035501daa48952deb896663bc0ad1cd314
 	else:
-		velocity = Vector2.ZERO
+		if Input.is_action_just_released("Move_Up"):
+			direction=Vector2(0,0)
+	if  Input.is_action_just_pressed("Move_Down"):
+		direction=Vector2(0,1)
+	else:
+		if Input.is_action_just_released("Move_Down"):
+			direction=Vector2(0,0)
+	if Input.is_action_just_pressed("Move_Left"):
+		rotation_direction=-1
+	else:
+		if Input.is_action_just_released("Move_Left"):
+			rotation_direction=0
+		#rotation_direction=clamp()
+	#if direction:
+	velocity = (direction.rotated(rotation_direction*rotation_speed) * speed*delta_time) 
+	rotation=rotation_direction*rotation_speed
+	#else:
+		#velocity = Vector2.ZERO
 
 	move_and_slide()
  
