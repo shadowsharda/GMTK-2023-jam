@@ -15,5 +15,6 @@ one_shot = true
 one_shot = true
 
 [connection signal="cooldown_finished" from="." to="." method="_on_cooldown_finished"]
+[connection signal="cooldown_started" from="." to="." method="_on_cooldown_started"]
 [connection signal="timeout" from="doge_timer" to="." method="_on_doge_timer_timeout"]
 [connection signal="timeout" from="doge_time" to="." method="_on_doge_time_timeout"]

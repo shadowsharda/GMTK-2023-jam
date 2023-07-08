@@ -13,7 +13,7 @@ func _physics_process(delta):
 	movement()
 	use_skill()
 	pass
-	
+
 func movement():
 	var direction = Input.get_vector("Move_Left", "Move_Right", "Move_Up", "Move_Down")
 
@@ -35,6 +35,6 @@ func use_skill():
 		skill_manager.skill_3.activate_skill()
 	if Input.is_action_just_pressed("Ultimate") and !skill_manager.ultimate_skill.on_cooldown:
 		skill_manager.ultimate_skill.activate_skill()
-	
+
 func _on_hitbox_area_entered(area):
 	pass # Replace with function body.

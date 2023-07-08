@@ -7,6 +7,7 @@ extends Node2D
 @export var doge_skill:Skill_Template = null
 @export var ultimate_skill:Skill_Template = null
 
+
 func load_skills():
 	var skill_counter = 0
 	for name in skill_list:

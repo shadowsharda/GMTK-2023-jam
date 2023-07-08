@@ -8,7 +8,6 @@ var can_doge = true
 @onready var doge_effect_timer = $doge_time
 
 func _ready():
-	doge_effect_timer
 	pass
 
 func activate_skill():
@@ -21,7 +20,6 @@ func doge():
 		doge_effect_timer.start(doge_duration)
 		doge_timer.start(cooldown_time)
 		skill_owner.speed+=base_doge_speed
-		on_cooldown = true
 		emit_signal("cooldown_started")
 
 func _on_doge_time_timeout():
@@ -36,5 +34,6 @@ func _on_cooldown_finished():
 	on_cooldown = false
 	pass # Replace with function body.
 
-
-
+func _on_cooldown_started():
+	on_cooldown = true
+	pass # Replace with function body.

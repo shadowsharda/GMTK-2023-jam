@@ -30,6 +30,6 @@ shape = SubResource("CircleShape2D_mnwl8")
 
 [node name="skills_manager" type="Node2D" parent="."]
 script = ExtResource("3_ccahg")
-skill_list = Array[String](["doge"])
+skill_list = Array[String](["doge", "launch_projectile"])
 
 [connection signal="area_entered" from="hitbox" to="." method="_on_hitbox_area_entered"]
