@@ -10,9 +10,11 @@ fire_rate = 0.05
 projectile_speed = 10
 number_of_projectiles = 5
 cooldown_time = 2.0
+damage = 5.0
 skill_type = 0
 
 [node name="projectile" parent="." instance=ExtResource("2_icjp4")]
+visible = false
 
 [node name="Icon" type="Sprite2D" parent="projectile"]
 position = Vector2(2.38419e-07, 2.38419e-07)

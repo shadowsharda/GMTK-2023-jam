@@ -9,6 +9,7 @@ class_name Player
 var direction:Vector2=Vector2(0,0)
 var  rotation_direction:int=0
 func _ready():
+	GlobalData.player = self
 	skill_manager.load_skills()
 	
 
@@ -56,5 +57,6 @@ func use_skill():
 	if Input.is_action_just_pressed("Ultimate") and !skill_manager.ultimate_skill.on_cooldown:
 		skill_manager.ultimate_skill.activate_skill()
 
-func _on_hitbox_area_entered(area):
+func _on_hit_box_hit_box_take_damage(damage):
+	
 	pass # Replace with function body.

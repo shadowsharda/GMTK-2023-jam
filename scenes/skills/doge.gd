@@ -14,7 +14,7 @@ func _ready():
 func activate_skill():
 	doge()
 	pass
-
+# double check these later for altering the speed boost from doge
 func doge():
 	if doge_timer.is_stopped() and doge_effect_timer.is_stopped():
 		print("A dode was made")
