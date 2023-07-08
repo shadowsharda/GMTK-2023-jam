@@ -8,7 +8,7 @@ extends Node2D
 @export var ultimate_skill:Skill_Template = null
 
 func load_skills():
-	var skill_counter = 0
+	var skill_counter:int = 0
 	for name in skill_list:
 		var skill:Skill_Template = await  load("res://scenes/skills/"+name+".tscn").instantiate()
 		skill.skill_owner = get_parent()

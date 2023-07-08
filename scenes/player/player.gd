@@ -12,7 +12,6 @@ func _ready():
 func _physics_process(delta):
 	movement()
 	use_skill()
-	pass
 	
 func movement():
 	var direction = Input.get_vector("Move_Left", "Move_Right", "Move_Up", "Move_Down")
