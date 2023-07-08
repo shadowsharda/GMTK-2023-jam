@@ -1,0 +1,21 @@
+[gd_scene load_steps=2 format=3 uid="uid://dbsvolxwgpsdp"]
+
+[ext_resource type="Script" path="res://scenes/UI/skill_icon_box.gd" id="1_uc31p"]
+
+[node name="skill_icon_box" type="Button"]
+custom_minimum_size = Vector2(128, 128)
+offset_right = 128.0
+offset_bottom = 128.0
+theme_override_font_sizes/font_size = 30
+text = "Skill"
+script = ExtResource("1_uc31p")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+visible = false
+layout_mode = 0
+offset_right = 128.0
+offset_bottom = 128.0
+color = Color(1, 1, 1, 0.631373)
+metadata/_edit_group_ = true
+
+[connection signal="connect_skill" from="." to="." method="_on_connect_skill"]

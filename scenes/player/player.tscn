@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://cxpqquvw7hbre"]
+[gd_scene load_steps=6 format=3 uid="uid://cxpqquvw7hbre"]
 
 [ext_resource type="Script" path="res://scenes/player/player.gd" id="1_kslpw"]
 [ext_resource type="Texture2D" uid="uid://cfe8m4rupolhw" path="res://icon.svg" id="2_qp67u"]
+[ext_resource type="Script" path="res://scenes/player/skills_manager.gd" id="3_ccahg"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_32y7h"]
 size = Vector2(40, 40)
@@ -11,7 +12,6 @@ radius = 19.105
 
 [node name="player" type="CharacterBody2D"]
 script = ExtResource("1_kslpw")
-skill_list = Array[String](["doge"])
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(0.5, -20)
@@ -28,6 +28,8 @@ shape = SubResource("RectangleShape2D_32y7h")
 position = Vector2(0, -19)
 shape = SubResource("CircleShape2D_mnwl8")
 
-[node name="skills_container" type="Node2D" parent="."]
+[node name="skills_manager" type="Node2D" parent="."]
+script = ExtResource("3_ccahg")
+skill_list = Array[String](["doge"])
 
 [connection signal="area_entered" from="hitbox" to="." method="_on_hitbox_area_entered"]
