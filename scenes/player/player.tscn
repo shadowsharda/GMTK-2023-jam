@@ -13,6 +13,7 @@ radius = 19.105
 [node name="player" type="CharacterBody2D"]
 position = Vector2(547, 162)
 script = ExtResource("1_kslpw")
+speed = 30000.0
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 scale = Vector2(0.304688, 0.3125)

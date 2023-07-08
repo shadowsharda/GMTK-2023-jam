@@ -15,41 +15,32 @@ func _ready():
 func _physics_process(delta):
 	movement(delta)
 	use_skill()
-<<<<<<< HEAD
 	pass
-
-func movement():
-	var direction = Input.get_vector("Move_Left", "Move_Right", "Move_Up", "Move_Down")
-
-	if direction:
-		velocity = (direction * speed) 
-=======
 	
 func movement(delta_time:float):
-	#var direction:Vector2 = Input.get_vector("Move_Left", "Move_Right", "Move_Up", "Move_Down")
+	var direction:Vector2 = Input.get_vector("Move_Left", "Move_Right", "Move_Up", "Move_Down")
 	#direction=Vector2(0,0)
-	if Input.is_action_just_pressed("Move_Up"):
-		direction=Vector2(0,-1)
->>>>>>> 9d6e93035501daa48952deb896663bc0ad1cd314
+#	if Input.is_action_just_pressed("Move_Up"):
+#		direction=Vector2(0,-1)
+#	else:
+#		if Input.is_action_just_released("Move_Up"):
+#			direction=Vector2(0,0)
+#	if  Input.is_action_just_pressed("Move_Down"):
+#		direction=Vector2(0,1)
+#	else:
+#		if Input.is_action_just_released("Move_Down"):
+#			direction=Vector2(0,0)
+#	if Input.is_action_just_pressed("Move_Left"):
+#		rotation_direction=-1
+#	else:
+#		if Input.is_action_just_released("Move_Left"):
+#			rotation_direction=0
+#		#rotation_direction=clamp()
+	if direction:
+		velocity = (direction.rotated(rotation_direction*rotation_speed) * speed*delta_time) 
+		rotation=rotation_direction*rotation_speed
 	else:
-		if Input.is_action_just_released("Move_Up"):
-			direction=Vector2(0,0)
-	if  Input.is_action_just_pressed("Move_Down"):
-		direction=Vector2(0,1)
-	else:
-		if Input.is_action_just_released("Move_Down"):
-			direction=Vector2(0,0)
-	if Input.is_action_just_pressed("Move_Left"):
-		rotation_direction=-1
-	else:
-		if Input.is_action_just_released("Move_Left"):
-			rotation_direction=0
-		#rotation_direction=clamp()
-	#if direction:
-	velocity = (direction.rotated(rotation_direction*rotation_speed) * speed*delta_time) 
-	rotation=rotation_direction*rotation_speed
-	#else:
-		#velocity = Vector2.ZERO
+		velocity = Vector2.ZERO
 
 	move_and_slide()
  

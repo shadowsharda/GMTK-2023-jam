@@ -8,7 +8,7 @@
 script = ExtResource("1_plx8p")
 fire_rate = 0.05
 projectile_speed = 10
-number_of_projectiles = 20
+number_of_projectiles = 5
 cooldown_time = 2.0
 skill_type = 0
 
