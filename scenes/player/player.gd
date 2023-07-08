@@ -3,8 +3,11 @@ extends CharacterBody2D
 class_name Player
 
 @export var speed:float = 3000.0
+@export var rotation_speed:float=PI/2
 @onready var skill_manager:Node2D = $skills_manager
+
 var direction:Vector2=Vector2(0,0)
+var  rotation_direction:int=0
 func _ready():
 	skill_manager.load_skills()
 	
@@ -26,10 +29,17 @@ func movement(delta_time:float):
 	else:
 		if Input.is_action_just_released("Move_Down"):
 			direction=Vector2(0,0)
-	if direction:
-		velocity = (direction * speed*delta_time) 
+	if Input.is_action_just_pressed("Move_Left"):
+		rotation_direction=-1
 	else:
-		velocity = Vector2.ZERO
+		if Input.is_action_just_released("Move_Left"):
+			rotation_direction=0
+		#rotation_direction=clamp()
+	#if direction:
+	velocity = (direction.rotated(rotation_direction*rotation_speed) * speed*delta_time) 
+	rotation=rotation_direction*rotation_speed
+	#else:
+		#velocity = Vector2.ZERO
 
 	move_and_slide()
  
