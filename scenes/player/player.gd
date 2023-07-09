@@ -17,7 +17,6 @@ func _ready():
 func _physics_process(delta):
 	movement(delta)
 	use_skill()
-	pass
 	
 func movement(delta_time:float):
 	#var direction:Vector2 = Input.get_vector("Move_Left", "Move_Right", "Move_Up", "Move_Down")

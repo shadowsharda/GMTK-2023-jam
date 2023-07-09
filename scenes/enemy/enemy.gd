@@ -2,11 +2,11 @@ extends CharacterBody2D
 
 class_name Enemy
 
-@export var speed := 3
-@export var health := 300
-@export var damage := 5
+@export var speed :int= 3
+@export var health :int= 300
+@export var damage :int= 5
 
-var is_dead:=false
+var is_dead:bool=false
 
 func _ready():
 	$hurtbox.damage = damage
@@ -22,4 +22,3 @@ func update_health(change:int):
 
 func _on_hit_box_hit_box_take_damage(damage:int):
 	update_health(damage)
-	pass # Replace with function body.
