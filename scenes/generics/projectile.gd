@@ -13,7 +13,6 @@ func _ready():
 
 func _process(delta):
 	position += bulletVelocity
-	pass
 
 func _on_visible_on_screen_notifier_2d_screen_exited():
 	await get_tree().create_timer(2).timeout
