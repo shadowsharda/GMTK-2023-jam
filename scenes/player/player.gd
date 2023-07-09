@@ -8,11 +8,12 @@ class_name Player
 
 var direction:Vector2=Vector2(0,0)
 var  rotation_direction:int=0
+@export var health = 100
+
 func _ready():
 	GlobalData.player = self
 	skill_manager.load_skills()
 	
-
 func _physics_process(delta):
 	movement(delta)
 	use_skill()

@@ -26,7 +26,7 @@ skill_list = Array[String](["doge", "launch_projectile"])
 [node name="bullet_spawerMarker2D" type="Marker2D" parent="."]
 position = Vector2(2, -19)
 
-[node name="Hit_box" parent="." instance=ExtResource("4_17df8")]
+[node name="Hit_box" parent="." groups=["player"] instance=ExtResource("4_17df8")]
 scale = Vector2(2, 2)
 
 [connection signal="hit_box_take_damage" from="Hit_box" to="." method="_on_hit_box_hit_box_take_damage"]

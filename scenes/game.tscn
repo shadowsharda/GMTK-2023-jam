@@ -3,7 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://cxpqquvw7hbre" path="res://scenes/player/player.tscn" id="1_0dexu"]
 [ext_resource type="Texture2D" uid="uid://cfe8m4rupolhw" path="res://icon.svg" id="1_damxn"]
 [ext_resource type="PackedScene" uid="uid://jpdvtiwstwy6" path="res://scenes/UI/skills_container.tscn" id="2_vwgrf"]
-[ext_resource type="PackedScene" uid="uid://bnwpxwqqiedre" path="res://scenes/enemy/enemy.tscn" id="3_v7bbe"]
+[ext_resource type="PackedScene" uid="uid://dgab2swj6yl16" path="res://scenes/enemy/charger.tscn" id="5_p0265"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_umh3c"]
 vertices = PackedVector2Array(16, -16, 16, 16, -16, 16, -16, -16)
@@ -139,9 +139,6 @@ metadata/_edit_group_ = true
 position = Vector2(557.5, 20.5)
 shape = SubResource("RectangleShape2D_vv4fl")
 
-[node name="enemy" parent="." instance=ExtResource("3_v7bbe")]
-position = Vector2(421, 305)
-
 [node name="player" parent="." instance=ExtResource("1_0dexu")]
 position = Vector2(167, 275)
 
@@ -152,3 +149,6 @@ offset_right = 362.0
 offset_bottom = 510.0
 scale = Vector2(0.45, 0.45)
 player = NodePath("../player")
+
+[node name="charger" parent="." instance=ExtResource("5_p0265")]
+position = Vector2(485, 293)

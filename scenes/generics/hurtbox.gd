@@ -13,5 +13,5 @@ func _process(delta):
 func _on_area_entered(area):
 	if area is Hit_Box:
 		area.emit_signal("hit_box_take_damage",damage)
-	pass # Replace with function body.
+
 
