@@ -38,7 +38,7 @@ func movement(delta_time:float):
 		rotation_direction=1
 	else:
 		if Input.is_action_just_released("Move_Right"):
-			rotation_direction=0
+			rotation_direction=1
 		#rotation_direction=clamp()
 	#if direction:
 	velocity = (direction.rotated(rotation) * speed*delta_time) 
