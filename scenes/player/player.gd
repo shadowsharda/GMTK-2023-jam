@@ -34,10 +34,15 @@ func movement(delta_time:float):
 	else:
 		if Input.is_action_just_released("Move_Left"):
 			rotation_direction=0
+	if  Input.is_action_just_pressed("Move_Right"):
+		rotation_direction=1
+	else:
+		if Input.is_action_just_released("Move_Right"):
+			rotation_direction=0
 		#rotation_direction=clamp()
 	#if direction:
-	velocity = (direction.rotated(rotation_direction*rotation_speed) * speed*delta_time) 
-	rotation=rotation_direction*rotation_speed
+	velocity = (direction.rotated(rotation) * speed*delta_time) 
+	rotation=rotation+(rotation_direction*rotation_speed*delta_time)
 	#else:
 		#velocity = Vector2.ZERO
 
