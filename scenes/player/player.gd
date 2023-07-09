@@ -11,7 +11,7 @@ var  rotation_direction:int=0
 @export var health = 100
 
 func _ready():
-	#GlobalData.player = self
+	GlobalData.player = self
 	skill_manager.load_skills()
 	
 func _physics_process(delta):
@@ -21,8 +21,6 @@ func _physics_process(delta):
 	
 func movement(delta_time:float):
 	#var direction:Vector2 = Input.get_vector("Move_Left", "Move_Right", "Move_Up", "Move_Down")
-#var direction:Vector2 = Input.get_vector("Move_Left", "Move_Right", "Move_Up", "Move_Down")
-	#direction=Vector2(0,0)
 	if Input.is_action_just_pressed("Move_Up"):
 		direction=Vector2(0,-1)
 	else:
@@ -43,7 +41,7 @@ func movement(delta_time:float):
 	else:
 		if Input.is_action_just_released("Move_Right"):
 			rotation_direction=0
-		#rotation_direction=clamp()
+
 	#if direction:
 	velocity = (direction.rotated(rotation) * speed*delta_time) 
 	rotation=rotation+(rotation_direction*rotation_speed*delta_time)
