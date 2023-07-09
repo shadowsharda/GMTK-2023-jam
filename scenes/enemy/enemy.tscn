@@ -1,0 +1,33 @@
+[gd_scene load_steps=5 format=3 uid="uid://bnwpxwqqiedre"]
+
+[ext_resource type="Script" path="res://scenes/enemy/enemy.gd" id="1_okpgd"]
+[ext_resource type="Texture2D" uid="uid://cfe8m4rupolhw" path="res://icon.svg" id="2_3ecg2"]
+[ext_resource type="PackedScene" uid="uid://bq1un3g8gby7l" path="res://scenes/generics/Hit_box.tscn" id="3_gvq6x"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rg65s"]
+size = Vector2(64, 63)
+
+[node name="enemy" type="CharacterBody2D"]
+script = ExtResource("1_okpgd")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -32.5)
+shape = SubResource("RectangleShape2D_rg65s")
+
+[node name="Icon" type="Sprite2D" parent="."]
+modulate = Color(0.960784, 0, 0.639216, 1)
+position = Vector2(0, -32)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_3ecg2")
+
+[node name="Hit_box" parent="." groups=["enemy"] instance=ExtResource("3_gvq6x")]
+position = Vector2(9.53674e-07, -32)
+scale = Vector2(3.2, 3.2)
+
+[node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
+
+[node name="Timer" type="Timer" parent="."]
+autostart = true
+
+[connection signal="hit_box_take_damage" from="Hit_box" to="." method="_on_hit_box_hit_box_take_damage"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
