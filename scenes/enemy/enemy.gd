@@ -1,16 +1,15 @@
 extends CharacterBody2D
 
-@export var speed := 3
-@export var health := 300
-@export var damage := 5
+@export var speed :int= 3
+@export var health :int= 300
+@export var damage :int= 5
 @onready var agent = $NavigationAgent2D
 enum {CHASE, ATTACK,IDLE,DEAD}
 var unit_state := IDLE
-var is_dead:=false
+var is_dead:bool=false
 
 
-func _ready():
-	pass # Replace with function body.
+# Replace with function body.
 
 func update_health(change:int):
 	if health-change <= 0:
@@ -75,4 +74,3 @@ func state_machine():
 
 func _on_hit_box_hit_box_take_damage(damage:int):
 	update_health(damage)
-	pass # Replace with function body.

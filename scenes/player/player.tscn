@@ -31,4 +31,6 @@ position = Vector2(2, -19)
 [node name="Hit_box" parent="." instance=ExtResource("4_17df8")]
 scale = Vector2(2, 2)
 
+[node name="Camera2D" type="Camera2D" parent="."]
+
 [connection signal="hit_box_take_damage" from="Hit_box" to="." method="_on_hit_box_hit_box_take_damage"]
