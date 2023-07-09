@@ -9,7 +9,7 @@ class_name Player
 var direction:Vector2=Vector2(0,0)
 var  rotation_direction:int=0
 func _ready():
-	GlobalData.player = self
+	#GlobalData.player = self
 	skill_manager.load_skills()
 	
 
@@ -19,29 +19,34 @@ func _physics_process(delta):
 	pass
 	
 func movement(delta_time:float):
-	var direction:Vector2 = Input.get_vector("Move_Left", "Move_Right", "Move_Up", "Move_Down")
+	#var direction:Vector2 = Input.get_vector("Move_Left", "Move_Right", "Move_Up", "Move_Down")
+#var direction:Vector2 = Input.get_vector("Move_Left", "Move_Right", "Move_Up", "Move_Down")
 	#direction=Vector2(0,0)
-#	if Input.is_action_just_pressed("Move_Up"):
-#		direction=Vector2(0,-1)
-#	else:
-#		if Input.is_action_just_released("Move_Up"):
-#			direction=Vector2(0,0)
-#	if  Input.is_action_just_pressed("Move_Down"):
-#		direction=Vector2(0,1)
-#	else:
-#		if Input.is_action_just_released("Move_Down"):
-#			direction=Vector2(0,0)
-#	if Input.is_action_just_pressed("Move_Left"):
-#		rotation_direction=-1
-#	else:
-#		if Input.is_action_just_released("Move_Left"):
-#			rotation_direction=0
-#		#rotation_direction=clamp()
-	if direction:
-		velocity = (direction.rotated(rotation_direction*rotation_speed) * speed*delta_time) 
-		rotation=rotation_direction*rotation_speed
+	if Input.is_action_just_pressed("Move_Up"):
+		direction=Vector2(0,-1)
 	else:
-		velocity = Vector2.ZERO
+		if Input.is_action_just_released("Move_Up"):
+			direction=Vector2(0,0)
+	if  Input.is_action_just_pressed("Move_Down"):
+		direction=Vector2(0,1)
+	else:
+		if Input.is_action_just_released("Move_Down"):
+			direction=Vector2(0,0)
+	if Input.is_action_just_pressed("Move_Left"):
+		rotation_direction=-1
+	else:
+		if Input.is_action_just_released("Move_Left"):
+			rotation_direction=0
+	if  Input.is_action_just_pressed("Move_Right"):
+		rotation_direction=1
+	else:
+		if Input.is_action_just_released("Move_Right"):
+			rotation_direction=0
+		#rotation_direction=clamp()
+	#if direction:
+	velocity = (direction.rotated(rotation) * speed*delta_time) 
+	rotation=rotation+(rotation_direction*rotation_speed*delta_time)
+	#velocity = Vector2.ZERO
 
 	move_and_slide()
  
