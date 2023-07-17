@@ -1,8 +1,9 @@
-[gd_scene load_steps=8 format=3 uid="uid://b8keg0we325wg"]
+[gd_scene load_steps=9 format=3 uid="uid://b8keg0we325wg"]
 
 [ext_resource type="PackedScene" uid="uid://cxpqquvw7hbre" path="res://scenes/player/player.tscn" id="1_0dexu"]
 [ext_resource type="Texture2D" uid="uid://cfe8m4rupolhw" path="res://icon.svg" id="1_damxn"]
 [ext_resource type="PackedScene" uid="uid://jpdvtiwstwy6" path="res://scenes/UI/skills_container.tscn" id="2_vwgrf"]
+[ext_resource type="PackedScene" uid="uid://bub5048a4i840" path="res://scenes/enemy/charger_version_2.tscn" id="5_c8kfy"]
 [ext_resource type="PackedScene" uid="uid://dgab2swj6yl16" path="res://scenes/enemy/charger.tscn" id="5_p0265"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_umh3c"]
@@ -90,3 +91,6 @@ player = NodePath("../player")
 
 [node name="charger" parent="." instance=ExtResource("5_p0265")]
 position = Vector2(485, 293)
+
+[node name="charger version2" parent="." instance=ExtResource("5_c8kfy")]
+position = Vector2(455, 286)
